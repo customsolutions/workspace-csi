@@ -313,7 +313,7 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
                     cprequire(["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
 
                         function(Svg2gcode) {
-                            macro.init();
+                            Svg2gcode.init();
                             // setup toggle button
                             var alBtn = $('#com-chilipeppr-ws-gcode-menu .Svg2gcode-button');
                             var alDiv = $('#com-chilipeppr-ws-Svg2gcode');
