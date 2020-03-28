@@ -487,7 +487,7 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
 
 			// com-zipwhip-widget-svg2gcode
             chilipeppr.load(
-                "com-zipwhip-widget-svg2gcode",
+                "#com-zipwhip-widget-svg2gcode",
                 "http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
                 function() {
                     // Callback after widget loaded into com-zipwhip-widget-svg2gcode
@@ -498,7 +498,7 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
                             Svg2gcode.init();
                             // setup toggle button
                             var alBtn = $('#com-chilipeppr-ws-gcode-menu .Svg2gcode-button');
-                            var alDiv = $('#com-chilipeppr-ws-Svg2gcode');
+                            var alDiv = $('#com-zipwhip-widget-svg2gcode');
                             alBtn.click(function() {
                                 if (alDiv.hasClass("hidden")) {
                                     // unhide
