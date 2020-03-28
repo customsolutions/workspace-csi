@@ -1,4 +1,4 @@
-# com-chilipeppr-workspace-csi
+# com-customsolutions/workspace-csi
 A ChiliPeppr Workspace grbl.
 
 
@@ -11,7 +11,7 @@ not conflict with other ChiliPeppr objects.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-chilipeppr-workspace-csi |
+| ID                    | com-customsolutions/workspace-csi |
 | Name                  | Workspace / grbl |
 | Description           | A ChiliPeppr Workspace grbl. |
 | chilipeppr.load() URL | https://raw.githubusercontent.com/customsolutions/workspace-csi/master/auto-generated-workspace.html |
@@ -39,11 +39,11 @@ chilipeppr.load(
     // Callback after workspace loaded into #pnlWorkspace
     // Now use require.js to get reference to instantiated workspace
     cprequire(
-      ["inline:com-chilipeppr-workspace-csi"], // the id you gave your workspace
-      function(myWorkspaceCsi) {
+      ["inline:com-customsolutions/workspace-csi"], // the id you gave your workspace
+      function(myComCustomsolutions/workspaceCsi) {
         // Callback that is passed reference to the newly loaded workspace
-        console.log("Workspace / grbl just got loaded.", myWorkspaceCsi);
-        myWorkspaceCsi.init();
+        console.log("Workspace / grbl just got loaded.", myComCustomsolutions/workspaceCsi);
+        myComCustomsolutions/workspaceCsi.init();
       }
     );
   }
@@ -135,7 +135,7 @@ The table below shows, in order, the methods and properties inside the workspace
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-workspace-csi"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / grbl"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"A ChiliPeppr Workspace grbl."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"https://raw.githubusercontent.com/customsolutions/workspace-csi/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"https://us-east-2.console.aws.amazon.com/cloud9/ide/b8a7cb3877d54044873863445dd756e0"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"https://github.com/customsolutions/workspace-csi"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"https://raw.githubusercontent.com/customsolutions/workspace-csi/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>widgetConsole</td><td>object</td><td>Contains reference to the Console widget object. Hang onto the reference
+      <tr valign="top"><td>id</td><td>string</td><td>"com-customsolutions/workspace-csi"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / grbl"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"A ChiliPeppr Workspace grbl."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"https://raw.githubusercontent.com/customsolutions/workspace-csi/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"https://us-east-2.console.aws.amazon.com/cloud9/ide/b8a7cb3877d54044873863445dd756e0"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"https://github.com/customsolutions/workspace-csi"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"https://raw.githubusercontent.com/customsolutions/workspace-csi/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>widgetConsole</td><td>object</td><td>Contains reference to the Console widget object. Hang onto the reference
 so we can resize it when the window resizes because we want it to manually
 resize to fill the height of the browser so it looks clean.</td></tr><tr valign="top"><td>init</td><td>function</td><td>function() <br><br>The workspace's init method. It loads the all the widgets contained in the workspace
 and inits them.</td></tr><tr valign="top"><td>getBillboard</td><td>function</td><td>function() <br><br>Returns the billboard HTML, CSS, and Javascript for this Workspace. The billboard
