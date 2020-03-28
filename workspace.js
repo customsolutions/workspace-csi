@@ -299,25 +299,48 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
                         });
                     });
                 });
+            
+           // Svg2gcode
+            console.log('WORKSPACE: loading Svg2gcode');
 
+			// #myDivComZipwhipWidgetSvg2gcode
             chilipeppr.load(
                 "#myDivComZipwhipWidgetSvg2gcode",
                 "http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
                 function() {
                     // Callback after widget loaded into #myDivComZipwhipWidgetSvg2gcode
                     // Now use require.js to get reference to instantiated widget
-                    cprequire(
-                        ["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
-                function(myObjComZipwhipWidgetSvg2gcode) {
-                    // Callback that is passed reference to the newly loaded widget
-                console.log("Widget / svg2gcode just got loaded.", myObjComZipwhipWidgetSvg2gcode);
-                    myObjComZipwhipWidgetSvg2gcode.init();
-                }
-            );
-        }
-    );
+                    cprequire(["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
 
+                        function(Svg2gcode) {
+                            macro.init();
+                            // setup toggle button
+                            var alBtn = $('#com-chilipeppr-ws-gcode-menu .Svg2gcode-button');
+                            var alDiv = $('#com-chilipeppr-ws-Svg2gcode');
+                            alBtn.click(function() {
+                                if (alDiv.hasClass("hidden")) {
+                                    // unhide
+                                    alDiv.removeClass("hidden");
+                                    alBtn.addClass("active");
+                                    //Svg2gcode.onDisplay();
+                                }
+                                else {
+                                    alDiv.addClass("hidden");
+                                    alBtn.removeClass("active");
+                                    //Svg2gcode.onUndisplay();
+                                }
+                                $(window).trigger('resize');
+                            });
+                        });
+                });// end Svg2gcode
+
+
+            
+
+           // Autolevelconsole
             console.log('WORKSPACE: loading autolevel');
+
+			//com-chilipeppr-ws-autolevel
             chilipeppr.load(
                 "#com-chilipeppr-ws-autolevel",
                 "http://raw.githubusercontent.com/jpadie/widget-grbl-autolevel/master/auto-generated-widget.html",
@@ -334,17 +357,17 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
                                     // unhide
                                     alDiv.removeClass("hidden");
                                     alBtn.addClass("active");
-                                    autolevel.onDisplay();
+                                    //autolevel.onDisplay();
                                 }
                                 else {
                                     alDiv.addClass("hidden");
                                     alBtn.removeClass("active");
-                                    autolevel.onUndisplay();
+                                    //autolevel.onUndisplay();
                                 }
                                 $(window).trigger('resize');
                             });
                         });
-                });
+                });// end autolevel
             /*
             // Inject new div to contain widget or use an existing div with an ID
             $("body").append('<' + 'div id="myDivWidgetAutolevel"><' + '/div>');
@@ -368,35 +391,37 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
 
 
             // Macro
-            // com-chilipeppr-ws-macro
-            console.log('WORKSPACE: loading macro');
-            chilipeppr.load(
-                "#com-chilipeppr-ws-macro",
-                "http://raw.githubusercontent.com/chilipeppr/widget-macro/master/auto-generated-widget.html",
-                function() {
-                    //"http://fiddle.jshell.net/chilipeppr/ZJ5vV/show/light/", function () {
-                    cprequire(["inline:com-chilipeppr-widget-macro"], function(macro) {
-                        macro.init();
-                        // setup toggle button
-                        var alBtn = $('#com-chilipeppr-ws-menu .macro-button');
-                        var alDiv = $('#com-chilipeppr-ws-macro');
-                        alBtn.click(function() {
-                            if (alDiv.hasClass("hidden")) {
-                                // unhide
-                                alDiv.removeClass("hidden");
-                                alBtn.addClass("active");
-                                //autolevel.onDisplay();
-                            }
-                            else {
-                                alDiv.addClass("hidden");
-                                alBtn.removeClass("active");
-                                //autolevel.onUndisplay();
-                            }
-                            $(window).trigger('resize');
+            console.log('WORKSPACE: loading Macro');
 
-                        });
-                    });
-                }); //End Macro
+            // com-chilipeppr-ws-macro
+            chilipeppr.load(
+				"#com-chilipeppr-ws-macro",
+				"http://raw.githubusercontent.com/chilipeppr/widget-macro/master/auto-generated-widget.html",
+                function () {
+                    cprequire(["inline:com-chilipeppr-widget-macro"], 
+					
+						function(macro) {
+							macro.init();
+							// setup toggle button
+							var alBtn = $('#com-chilipeppr-ws-menu .macro-button');
+							var alDiv = $('#com-chilipeppr-ws-macro');
+							alBtn.click(function() {
+								if (alDiv.hasClass("hidden")) {
+									// unhide
+									alDiv.removeClass("hidden");
+									alBtn.addClass("active");
+									//autolevel.onDisplay();
+								}
+								else {
+									alDiv.addClass("hidden");
+									alBtn.removeClass("active");
+									//autolevel.onUndisplay();
+								}
+								$(window).trigger('resize');
+
+							});
+						});
+					}); //End Macro
 
 
             /*
