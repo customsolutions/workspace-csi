@@ -166,18 +166,18 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
 			// Workspace widget
 			var that = this;
             chilipeppr.load(
-				"#myDivComZipwhipWidgetSvg2gcode",
+				"com-zipwhip-widget-svg2gcode",
 				"http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
 				function() {
-				// Callback after widget loaded into #myDivComZipwhipWidgetSvg2gcode
+				// Callback after widget loaded into com-zipwhip-widget-svg2gcode
 				// Now use require.js to get reference to instantiated widget
 				console.log("mycallback got called after loading Svg2gcode module");
 				cprequire(["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
 				
-				function(myObjComZipwhipWidgetSvg2gcode) {
+				function(Svg2gcode) {
 				// Callback that is passed reference to the newly loaded widget
-				console.log("Widget / svg2gcode just got loaded.", myObjComZipwhipWidgetSvg2gcode);
-				myObjComZipwhipWidgetSvg2gcode.init();
+				console.log("Widget / svg2gcode just got loaded.", com-zipwhip-widget-svg2gcode);
+				Svg2gcode.init();
 				}
 			);
 		}
@@ -195,7 +195,9 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
                 "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
                 function() {
                     console.log("mycallback got called after loading spjs module");
-                    cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
+                    cprequire(["inline:com-chilipeppr-widget-serialport"], 
+                    
+                    function(spjs) {
                         //console.log("inside require of " + fm.id);
                         spjs.setSingleSelectMode();
                         spjs.init({
@@ -309,17 +311,17 @@ cpdefine("inline:com-customsolutions-workspace-csi", ["chilipeppr_ready"], funct
            // Svg2gcode
             console.log('WORKSPACE: loading Svg2gcode');
 
-			// #myDivComZipwhipWidgetSvg2gcode
+			// com-zipwhip-widget-svg2gcode
             chilipeppr.load(
-                "#myDivComZipwhipWidgetSvg2gcode",
+                "com-zipwhip-widget-svg2gcode",
                 "http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
                 function() {
-                    // Callback after widget loaded into #myDivComZipwhipWidgetSvg2gcode
+                    // Callback after widget loaded into com-zipwhip-widget-svg2gcode
                     // Now use require.js to get reference to instantiated widget
                     cprequire(["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
 
                         function(Svg2gcode) {
-                            myObjComZipwhipWidgetSvg2gcode.init();
+                            com-zipwhip-widget-svg2gcode.init();
                             // setup toggle button
                             var alBtn = $('#com-chilipeppr-ws-gcode-menu .Svg2gcode-button');
                             var alDiv = $('#com-chilipeppr-ws-Svg2gcode');
