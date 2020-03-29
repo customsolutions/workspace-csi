@@ -31,7 +31,7 @@ cprequire_test(["inline:com-customsolutions-workspace-csi"], function(ws) {
     $('body').css('padding', '10px');
 
 } /*end_test*/ );
-//test
+
 Function.prototype.clone = function() {
     var that = this;
     var temp = function temporary() {
